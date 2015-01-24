@@ -22,7 +22,7 @@ bc. {
       "meta"  { "charset" : "utf-8"} 
     },
     "body" {
-      "h1" { "id" : "title", "This is header" },
+      "h1" { "id" : "pageheader", "This is header" },
       "p"  { "This is paragraph" },
       "ul" { "li" [
          {"One"},
