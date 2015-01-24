@@ -2,4 +2,4 @@ h1. pegjs-grammars
 
 Here are grammar files for "PEG.js":http://pegjs.org/ parser generator
 
-* "eJSON":/ejson.texttile
+* "eJSON":/ejson.textile
