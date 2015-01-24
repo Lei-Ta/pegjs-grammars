@@ -14,7 +14,7 @@ eJSON can be used as replacement to XML and HTML, because it allows objects with
 
 Below it is code in eJSON and parser's output in JSON: 
 
-eJSON:
+Input (eJSON):
 
 bc. { 
   "doctype" { "html" },
@@ -35,7 +35,7 @@ bc. {
   }
 }
 
-JSON:
+Ouput (JSON):
 
 bc. { "$" : [ 
   { "name" : "doctype", "$" : [ "html" ] },
