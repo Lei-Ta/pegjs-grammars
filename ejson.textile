@@ -6,7 +6,7 @@ Grammar file of Enhansed JSON for PEG parser generator
 
 The grammar adds QML-like features to JSON objects: 
 
-* Keyless fields
+* Keyless values
 * Named objects
 * Alternatives
 
