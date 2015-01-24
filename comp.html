@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+	<meta http-equiv='content-type' content='text/html; charset=utf-8'/>
+
+	<style type='text/css'>
+		body, div, p, table {
+			font-size:10pt;
+			font-family:Verdana;
+		}
+
+		img{border:none}
+		pre {border:1px solid black; display:inline-block; padding:5px;margin:0px;}
+pre.simple {display:inline-table; padding:5px;margin:0px;}
+	</style>
+	<style type='text/css'>
+table {border-collapse:collapse; width:100%;}
+  table.small {width:50%;} 
+  td, th {border: 1px solid black; vertical-align:top; width:33%;}
+  .noborder {border: 0px;} 
+  table.inner > td, th {border: 1px solid black;}
+	th.w {text-align:center; width:50%;}
+	th.o {text-align:center; width:50%;}
+	td {padding: 0px 0px 0px 2px ;}
+	pre {border:none; display:inline-box;}
+	.border {padding: 4px; border: 1px solid black;}
+	.noborder {border:none;}
+	div.full {width:98%;}
+	div.left {float:left; width:49%;}
+	div.right {float:right; width:49%;}
+	.r {color:red;}
+	.g {color:green;}
+	.b {color:blue;}
+</style>
+</head>
+
+<body>
+
+<h2>Palyginimas</h2>
+<a href="../">Aukščiau</a><br>
+<table>
+<tr><th>JSON</th><th>JsonML</th><th>QML</th>
+</tr>
+<tr>
+<td>
+<pre>{ &quot;$&quot; : [ 
+  { &quot;name&quot; : &quot;doctype&quot;, &quot;$&quot; : [ &quot;html&quot; ] },
+  { &quot;name&quot; : &quot;html&quot;, &quot;$&quot; : [
+    { &quot;name&quot; : &quot;head&quot;, &quot;$&quot; : [
+      { &quot;name&quot;    : &quot;title&quot;, &quot;$&quot; : [&quot;This is title&quot;] },
+      { &quot;name&quot;    : &quot;meta&quot;, &quot;charset&quot; : &quot;utf-8&quot; } 
+    ]},
+    { &quot;name&quot; : &quot;body&quot;, &quot;$&quot; : [
+      { &quot;name&quot; : &quot;h1&quot;, &quot;id&quot; : &quot;title&quot;, &quot;$&quot; : [ &quot;This is header&quot; ] },
+      { &quot;name&quot; : &quot;p&quot;,  &quot;$&quot;  : [ &quot;This is paragraph&quot; ] },
+      { &quot;name&quot; : &quot;ul&quot;, &quot;$&quot;  : [
+        { &quot;name&quot; : &quot;li&quot;, &quot;$&quot; : [ &quot;One&quot;   ] },
+        { &quot;name&quot; : &quot;li&quot;, &quot;$&quot; : [ &quot;Two&quot;   ] },
+        { &quot;name&quot; : &quot;li&quot;, &quot;$&quot; : [ &quot;Three&quot; ] }
+      ]} 
+    ]} 
+  ]}
+]}</pre>
+</td>
+<td>
+<pre>[ 
+  [ &quot;doctype&quot;, &quot;html&quot; ],
+  [ &quot;html&quot;, [
+    [&quot;head&quot;, [
+      [ &quot;title&quot;, &quot;This is title&quot; ],
+      [ &quot;meta&quot;,  { &quot;charset&quot; : &quot;utf-8&quot; } ] 
+    ],
+    [ &quot;body&quot;, [
+      [ &quot;h1&quot;, { &quot;id&quot; : &quot;title&quot; }, &quot;This is header&quot; ],
+      [ &quot;p&quot;, &quot;This is paragraph&quot; ],
+      [ &quot;ul&quot;, [
+        [ &quot;li&quot;, &quot;One&quot;   ],
+        [ &quot;li&quot;, &quot;Two&quot;   ],
+        [ &quot;li&quot;, &quot;Three&quot; ]
+      ] 
+    ] 
+  ]
+]</pre>
+</td>
+<td>
+<pre>
+{
+  Doctype { text : 'html' }
+  Html {
+    Head {
+      Title { text    : 'This is title' }
+      Meta  { charset : 'utf-8'         }
+    }
+    Body { 
+      H1 { id   : &quot;title&quot;; text : 'This is header' }
+      P  { text : 'This is paragraph'} 
+      Ul { Li [
+        { text : 'One' }
+        { text : 'Two' }
+        { text : 'Three' }
+      ] }
+    } 
+  }
+}</pre>
+</td>
+</tr>
+<tr><th>eJSON</th><th></th><th>SIML</th>
+</tr>
+<td>
+<pre>{ 
+  &quot;doctype&quot; { &quot;html&quot; },
+  &quot;html&quot; {
+    &quot;head&quot; { 
+      &quot;title&quot; { &quot;This is title&quot;},
+      &quot;meta&quot;  { &quot;charset&quot; : &quot;utf-8&quot;} 
+    },
+    &quot;body&quot; {
+      &quot;h1&quot; { &quot;id&quot; : &quot;title&quot;, &quot;This is header&quot; },
+      &quot;p&quot;  { &quot;This is paragraph&quot; },
+      &quot;ul&quot; { &quot;li&quot; [
+         {&quot;One&quot;},
+         {&quot;Two&quot;},
+         {&quot;Three&quot;}
+      ]} 
+    } 
+  }
+}</pre>
+</td>
+<td></td>
+<td>
+<pre>
+{
+  @doctype()
+  html {
+    head {
+      title 'This is title'
+      meta[charset=utf-8]
+    }
+    body {
+      h1#title 'This is header'
+      p 'This is paragraph'
+      ul li (
+        'One' 
+      / 'Two' 
+      / 'Three'
+      )
+    }
+  }
+}</pre>
+</td>
+</tr>
+<tr><th></th><th>Jaml</th><th>ReML</th>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre>[
+  doctype ('html'),
+  html ( 
+    head ( 
+      title ( 'This is title' ),
+      meta  ( { &quot;charset&quot; : 'utf-8'} ) 
+    ),
+    body ( 
+      h1 ( {&quot;id&quot; : &quot;title&quot;}, 'This is header'),
+      p  ('This is paragraph'),
+      ul ( li ( [
+        [ 'One' ],
+        [ 'Two' ],
+        [ 'Three' ]
+      ] ) )
+    ) 
+  )
+]</pre>
+</td>
+<td>
+<pre>
+(
+  doctype 'html'
+  html ( 
+    head ( 
+      title 'This is title' 
+      meta  (charset = 'utf-8') 
+    ) 
+    body ( 
+      h1#title 'This is header'
+      p 'This is paragraph' 
+      ul li (
+        'One' 
+      | 'Two' 
+      | 'Three'
+      )
+    ) 
+  )
+)</pre>
+</td>
+</tr>
+</table>
+</body>
+</html>
