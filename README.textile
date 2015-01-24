@@ -8,10 +8,13 @@ The grammar adds QML-like features to JSON objects:
 * Named objects
 * Alternatives
 
+eJSON can be used as replacement to XML and HTML, because it allows objects with same name and preserves order, and its syntax is simpler then JSON's one.
 
+Below it is code in eJSON and parser's output in JSON: 
 
+eJSON:
 
-{ 
+bc. { 
   "doctype" { "html" },
   "html" {
     "head" { 
@@ -29,3 +32,24 @@ The grammar adds QML-like features to JSON objects:
     } 
   }
 }
+
+JSON:
+
+bc. { "$" : [ 
+  { "name" : "doctype", "$" : [ "html" ] },
+  { "name" : "html", "$" : [
+    { "name" : "head", "$" : [
+      { "name"    : "title", "$" : ["This is title"] },
+      { "name"    : "meta", "charset" : "utf-8" } 
+    ]},
+    { "name" : "body", "$" : [
+      { "name" : "h1", "id" : "title", "$" : [ "This is header" ] },
+      { "name" : "p",  "$"  : [ "This is paragraph" ] },
+      { "name" : "ul", "$"  : [
+        { "name" : "li", "$" : [ "One"   ] },
+        { "name" : "li", "$" : [ "Two"   ] },
+        { "name" : "li", "$" : [ "Three" ] }
+      ]} 
+    ]} 
+  ]}
+]}
