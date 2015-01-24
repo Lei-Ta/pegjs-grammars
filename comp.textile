@@ -1,6 +1,5 @@
-table(#dvds){border-collapse:collapse;font-size:50%}.
-|_. JSON |_. JsonML |
-| <pre><code>{ "$" : [ 
+bc.. JSON 
+{ "$" : [ 
   { "name" : "doctype", "$" : [ "html" ] },
   { "name" : "html", "$" : [
     { "name" : "head", "$" : [
@@ -17,7 +16,10 @@ table(#dvds){border-collapse:collapse;font-size:50%}.
       ]} 
     ]} 
   ]}
-]}</code></pre> | <pre><code>[ 
+]}
+
+JsonML
+[ 
   [ "doctype", "html" ],
   [ "html", [
     ["head", [
@@ -34,9 +36,10 @@ table(#dvds){border-collapse:collapse;font-size:50%}.
       ] 
     ] 
   ]
-]</code></pre> |
-|_. QML |_. eJSON |
-| <pre><code>{
+]
+
+QML
+{
   Doctype { text : 'html' }
   Html {
     Head {
@@ -53,7 +56,10 @@ table(#dvds){border-collapse:collapse;font-size:50%}.
       ] }
     } 
   }
-}</code></pre> | <pre><code>{ 
+}
+
+eJSON
+{ 
   "doctype" { "html" },
   "html" {
     "head" { 
@@ -70,4 +76,64 @@ table(#dvds){border-collapse:collapse;font-size:50%}.
       ]} 
     } 
   }
-}</code></pre> |
+}
+
+SIML
+{
+  @doctype()
+  html {
+    head {
+      title 'This is title'
+      meta[charset=utf-8]
+    }
+    body {
+      h1#title 'This is header'
+      p 'This is paragraph'
+      ul li (
+        'One' 
+      / 'Two' 
+      / 'Three'
+      )
+    }
+  }
+}
+
+JAML
+[
+  doctype ('html'),
+  html ( 
+    head ( 
+      title ( 'This is title' ),
+      meta  ( { "charset" : 'utf-8'} ) 
+    ),
+    body ( 
+      h1 ( {"id" : "title"}, 'This is header'),
+      p  ('This is paragraph'),
+      ul ( li ( [
+        [ 'One' ],
+        [ 'Two' ],
+        [ 'Three' ]
+      ] ) )
+    ) 
+  )
+]
+
+ReML
+(
+  doctype 'html'
+  html ( 
+    head ( 
+      title 'This is title' 
+      meta  (charset = 'utf-8') 
+    ) 
+    body ( 
+      h1#title 'This is header'
+      p 'This is paragraph' 
+      ul li (
+        'One' 
+      | 'Two' 
+      | 'Three'
+      )
+    ) 
+  )
+)
