@@ -1,3 +1,5 @@
+h1. Palyginimas
+
 "Home":../../
 
 "JSON":http://json.org/ <pre><code>{ "$" : [ 
@@ -8,7 +10,7 @@
       { "name"    : "meta", "charset" : "utf-8" } 
     ]},
     { "name" : "body", "$" : [
-      { "name" : "h1", "id" : "title", "$" : [ "This is header" ] },
+      { "name" : "h1", "id" : "phead", "$" : [ "This is header" ] },
       { "name" : "p",  "$"  : [ "This is paragraph" ] },
       { "name" : "ul", "$"  : [
         { "name" : "li", "$" : [ "One"   ] },
@@ -27,7 +29,7 @@
       [ "meta",  { "charset" : "utf-8" } ] 
     ],
     [ "body", [
-      [ "h1", { "id" : "title" }, "This is header" ],
+      [ "h1", { "id" : "phead" }, "This is header" ],
       [ "p", "This is paragraph" ],
       [ "ul", [
         [ "li", "One"   ],
@@ -46,7 +48,7 @@
       Meta  { charset : 'utf-8'         }
     }
     Body { 
-      H1 { id   : "title"; text : 'This is header' }
+      H1 { id   : "phead"; text : 'This is header' }
       P  { text : 'This is paragraph'} 
       Ul { Li [
         { text : 'One' }
@@ -54,25 +56,6 @@
         { text : 'Three' }
       ] }
     } 
-  }
-}</code></pre>
-
-"SIML":http://james.padolsey.com/javascript/building-siml-a-new-markup-language/ <pre><code>{
-  @doctype()
-  html {
-    head {
-      title 'This is title'
-      meta[charset=utf-8]
-    }
-    body {
-      h1#title 'This is header'
-      p 'This is paragraph'
-      ul li (
-        'One' 
-      / 'Two' 
-      / 'Three'
-      )
-    }
   }
 }</code></pre>
 
@@ -84,7 +67,7 @@
       META({ charset : "utf-8"}
     ),
     BODY(
-      H1({ id : "title"}, "This is header"),
+      H1({ id : "phead"}, "This is header"),
       P  ( "This is paragraph" ),
       UL ( 
         LI ( "One" ),
@@ -95,7 +78,7 @@
   )
 )</code></pre>
 
-"JAML":https://github.com/edspencer/jaml <pre><code>[
+"Jaml":https://github.com/edspencer/jaml <pre><code>[
   doctype ('html'),
   html ( 
     head ( 
@@ -103,18 +86,37 @@
       meta  ( { "charset" : 'utf-8'} ) 
     ),
     body ( 
-      h1 ( {"id" : "title"}, 'This is header'),
+      h1 ( {"id" : "phead"}, 'This is header'),
       p  ('This is paragraph'),
-      ul ( li ( [
-        [ 'One' ],
-        [ 'Two' ],
-        [ 'Three' ]
-      ] ) )
+      ul ( 
+        li ( 'One' ),
+        li ( 'Two' ),
+        li ( 'Three' )
+      )
     ) 
   )
 ]</code></pre>
 
-"eJSON":/ejson.textile <pre><code>{ 
+"SIML":http://james.padolsey.com/javascript/building-siml-a-new-markup-language/ <pre><code>{
+  @doctype()
+  html {
+    head {
+      title 'This is title'
+      meta[charset=utf-8]
+    }
+    body {
+      h1#phead 'This is header'
+      p 'This is paragraph'
+      ul li (
+        'One' 
+      / 'Two' 
+      / 'Three'
+      )
+    }
+  }
+}</code></pre>
+
+"eJSON":http://lieta.lt/reml/parsers/eJSON-01a.html <pre><code>{ 
   "doctype" { "html" },
   "html" {
     "head" { 
@@ -122,7 +124,7 @@
       "meta"  { "charset" : "utf-8"} 
     },
     "body" {
-      "h1" { "id" : "title", "This is header" },
+      "h1" { "id" : "phead", "This is header" },
       "p"  { "This is paragraph" },
       "ul" { "li" [
          {"One"},
@@ -133,7 +135,7 @@
   }
 }</code></pre>
 
-"ReML":/reml.textile <pre><code>(
+</th><td></td><th>ReML<pre><code>(
   doctype 'html'
   html ( 
     head ( 
@@ -141,7 +143,7 @@
       meta  (charset = 'utf-8') 
     ) 
     body ( 
-      h1#title 'This is header'
+      h1#phead 'This is header'
       p 'This is paragraph' 
       ul li (
         'One' 
