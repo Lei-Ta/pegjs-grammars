@@ -1,7 +1,6 @@
 "Home":../../
 
-bc.. JSON 
-{ "$" : [ 
+"JSON":http://json.org/ <pre><code>{ "$" : [ 
   { "name" : "doctype", "$" : [ "html" ] },
   { "name" : "html", "$" : [
     { "name" : "head", "$" : [
@@ -18,10 +17,9 @@ bc.. JSON
       ]} 
     ]} 
   ]}
-]}
+]}</code></pre>
 
-JsonML
-[ 
+"JsonML":http://jsonml.org/ <pre><code>[ 
   [ "doctype", "html" ],
   [ "html", [
     ["head", [
@@ -38,10 +36,9 @@ JsonML
       ] 
     ] 
   ]
-]
+]</code></pre>
 
-QML
-{
+"QML":http://doc.qt.io/qt-5/qtqml-index.html <pre><code>{
   Doctype { text : 'html' }
   Html {
     Head {
@@ -58,10 +55,9 @@ QML
       ] }
     } 
   }
-}
+}</code></pre>
 
-eJSON
-{ 
+"eJSON":/ejson.textile <pre><code>{ 
   "doctype" { "html" },
   "html" {
     "head" { 
@@ -78,10 +74,9 @@ eJSON
       ]} 
     } 
   }
-}
+}</code></pre>
 
-SIML
-{
+"SIML":http://james.padolsey.com/javascript/building-siml-a-new-markup-language/ <pre><code>{
   @doctype()
   html {
     head {
@@ -98,10 +93,9 @@ SIML
       )
     }
   }
-}
+}</code></pre>
 
-JAML
-[
+"JAML":https://github.com/edspencer/jaml <pre><code>[
   doctype ('html'),
   html ( 
     head ( 
@@ -118,10 +112,9 @@ JAML
       ] ) )
     ) 
   )
-]
+]</code></pre>
 
-ReML
-(
+"ReML":/reml.textile <pre><code>(
   doctype 'html'
   html ( 
     head ( 
@@ -138,4 +131,4 @@ ReML
       )
     ) 
   )
-)
+)</code></pre>
