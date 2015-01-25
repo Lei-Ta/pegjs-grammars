@@ -4,4 +4,4 @@ Here are grammar files for "PEG.js":http://pegjs.org/ parser generator
 
 * "eJSON":/ejson.textile
 * "ReML":/reml.textile
-* "Here you can to compare different languages":/comp.textile
+* "Here you can to compare different languages":http://re-ling.github.io/pegjs-grammars/comp.html
