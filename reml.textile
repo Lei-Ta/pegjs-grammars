@@ -6,7 +6,7 @@ Grammar file of ReML for PEG parser generator
 
 ReML can be used as replacement to XML and HTML, because it allows objects with same name and preserves order, and its syntax is simpler then JSON's one.
 
-Below there is code in ReML and parser's output in JSON: 
+There is code in ReML and parser's output in JSON: 
 
 Input (ReML):
 
