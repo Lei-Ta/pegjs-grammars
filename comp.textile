@@ -57,25 +57,6 @@
   }
 }</code></pre>
 
-"eJSON":/ejson.textile <pre><code>{ 
-  "doctype" { "html" },
-  "html" {
-    "head" { 
-      "title" { "This is title"},
-      "meta"  { "charset" : "utf-8"} 
-    },
-    "body" {
-      "h1" { "id" : "title", "This is header" },
-      "p"  { "This is paragraph" },
-      "ul" { "li" [
-         {"One"},
-         {"Two"},
-         {"Three"}
-      ]} 
-    } 
-  }
-}</code></pre>
-
 "SIML":http://james.padolsey.com/javascript/building-siml-a-new-markup-language/ <pre><code>{
   @doctype()
   html {
@@ -95,6 +76,25 @@
   }
 }</code></pre>
 
+"dōmo":http://jed.github.io/domo/ <pre><code>(
+  DOCTYPE("html"),
+  HTML(
+    HEAD(
+      TITLE("This is title"),
+      META({ charset : "utf-8"}
+    ),
+    BODY(
+      H1({ id : "title"}, "This is header"),
+      P  ( "This is paragraph" ),
+      UL ( 
+        LI ( "One" ),
+        LI ( "Two" ),
+        LI ( "Three" )
+      )
+    )
+  )
+)</code></pre>
+
 "JAML":https://github.com/edspencer/jaml <pre><code>[
   doctype ('html'),
   html ( 
@@ -113,6 +113,25 @@
     ) 
   )
 ]</code></pre>
+
+"eJSON":/ejson.textile <pre><code>{ 
+  "doctype" { "html" },
+  "html" {
+    "head" { 
+      "title" { "This is title"},
+      "meta"  { "charset" : "utf-8"} 
+    },
+    "body" {
+      "h1" { "id" : "title", "This is header" },
+      "p"  { "This is paragraph" },
+      "ul" { "li" [
+         {"One"},
+         {"Two"},
+         {"Three"}
+      ]} 
+    } 
+  }
+}</code></pre>
 
 "ReML":/reml.textile <pre><code>(
   doctype 'html'
