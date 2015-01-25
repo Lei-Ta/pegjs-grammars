@@ -1,4 +1,4 @@
-h1. Palyginimas
+h1. Compare formats
 
 "Home":../../
 
