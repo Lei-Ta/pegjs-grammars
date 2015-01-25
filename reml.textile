@@ -1,20 +1,14 @@
 "Home":../../
 
-h1. eJSON
+h1. ReML
 
-Grammar file of Enhansed JSON for PEG parser generator
+Grammar file of ReML for PEG parser generator
 
-The grammar adds QML-like features to JSON objects: 
+ReML can be used as replacement to XML and HTML, because it allows objects with same name and preserves order, and its syntax is simpler then JSON's one.
 
-* Keyless values
-* Named objects
-* Alternatives
+Below there is code in ReML and parser's output in JSON: 
 
-eJSON can be used as replacement to XML and HTML, because it allows objects with same name and preserves order, and its syntax is simpler then JSON's one.
-
-Below there is code in eJSON and parser's output in JSON: 
-
-Input (eJSON):
+Input (ReML):
 
 bc. (
   doctype 'html'
