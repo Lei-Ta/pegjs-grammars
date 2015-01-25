@@ -1,6 +1,6 @@
 "Home":../../
 
-h1. Data formats
+h1. Compare languages
 
 "JSON":http://json.org/ <pre><code>{ "$" : [ 
   { "name" : "doctype", "$" : [ "html" ] },
