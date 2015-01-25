@@ -1,6 +1,6 @@
-h1. Data formats
-
 "Home":../../
+
+h1. Data formats
 
 "JSON":http://json.org/ <pre><code>{ "$" : [ 
   { "name" : "doctype", "$" : [ "html" ] },
