@@ -21,10 +21,15 @@ bc. {
   "html" {
     "head" { 
       "title" { "This is title"}
-      "meta"  { "charset" : "utf-8"} 
+      "meta"  { 
+        "charset" : "utf-8"
+      } 
     },
     "body" {
-      "h1" { "id" : "phead"; "This is header" }
+      "h1" { 
+         "id" : "phead"; "This is header" 
+      
+      }
       "p"  { "This is paragraph" }
       "ul" { "li" [
          "One"
