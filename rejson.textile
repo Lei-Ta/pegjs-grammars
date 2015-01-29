@@ -28,7 +28,7 @@ bc. {
     "body" {
       "h1" { 
          "id" : "phead"; "This is header" 
-      
+      &nbsp;
       }
       "p"  { "This is paragraph" }
       "ul" { "li" [
