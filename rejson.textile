@@ -17,7 +17,7 @@ Below there is code in reJSON and parser's output in JSON:
 Input (reJSON):
 
 bc. { 
-  "doctype" { "html" }
+  doctype { "html" }
   "html" {
     "head" { 
       "title" { "This is title"}
@@ -35,7 +35,7 @@ bc. {
   }
 }
 
-Names can be strings with quotes or symbols without quotes.
+Note: Names can be strings with quotes or symbols without quotes.
 
 Ouput (JSON):
 
