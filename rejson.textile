@@ -1,6 +1,6 @@
 "Home":../../
 
-h1. eJSON
+h1. reJSON
 
 Grammar file of Enhansed JSON for PEG parser generator
 
@@ -17,19 +17,19 @@ Below there is code in eJSON and parser's output in JSON:
 Input (eJSON):
 
 bc. { 
-  "doctype" { "html" },
+  "doctype" { "html" }
   "html" {
     "head" { 
-      "title" { "This is title"},
+      "title" { "This is title"}
       "meta"  { "charset" : "utf-8"} 
     },
     "body" {
-      "h1" { "id" : "pageheader", "This is header" },
-      "p"  { "This is paragraph" },
+      "h1" { "id" : "pageheader"; "This is header" }
+      "p"  { "This is paragraph" }
       "ul" { "li" [
-         {"One"},
-         {"Two"},
-         {"Three"}
+         "One"
+         "Two"
+         "Three"
       ]} 
     } 
   }
