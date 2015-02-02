@@ -76,9 +76,9 @@ bc. [
       { "_TYPE_": "_MESSAGE_", "_NAME_": "p", "_VALUE_": [ "This is ",
                                                              "text" ] },
       { "_TYPE_": "_MESSAGE_", "_NAME_": "ul", "_VALUE_": [
-        { "_TYPE_": "_ML-COMMENT_", "_VALUE_": "abc" },
+        { "_TYPE_": "_MLC_", "_VALUE_": "abc" },
         { "_TYPE_": "_MESSAGE_",     "_NAME_": "br" },
-        { "_TYPE_": "_SL-COMMENT_", "_VALUE_": "abc" },
+        { "_TYPE_": "_SLC_", "_VALUE_": "abc" },
         { "_TYPE_": "_MESSAGE_",     "_NAME_": "li", "_VALUE_": "a", "_LOOP_": [
           { "_TYPE_": "_ITERATION_", "_VALUE_": [ "One", "Two" ] },
           { "_TYPE_": "_ITERATION_", "_VALUE_": 15.15 },
