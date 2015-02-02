@@ -262,7 +262,7 @@ ml_comment
   = ";\\+" c:([^+] / plus_wo_bsl)+ "+\\" {
       result = c.join('').trim();
       if (result === "") return null;
-      return { "_TYPE_" : "_ML-COMMENT_", "_VALUE_" : c.join('')};
+      return { "_TYPE_" : "_MLC_", "_VALUE_" : c.join('')};
     }
   / ";\\+" [+]? "\\"
     {return null;}
@@ -271,7 +271,7 @@ sl_comment
   = ";\\\\" c:([^\n\r+] / plus_wo_bsl)+ ("+\\" / [\n\r]) {
       result = c.join('').trim();
       if (result === "") return null;
-      return { "_TYPE_" : "_SL-COMMENT_", "_VALUE_" : c.join('') };
+      return { "_TYPE_" : "_SLC_", "_VALUE_" : c.join('') };
     }
   / ";\\\\" ("+\\" / [\n\r])
     {return null;}
