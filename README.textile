@@ -4,4 +4,4 @@ Here are grammar files for "PEG.js":http://pegjs.org/ parser generator
 
 * "JSSL":/jssl.textile
 * "ReSL":/resl.textile
-* "Here you can to compare different languages":http://leita.lt/re/comparison/
+* "Here you can to compare different languages":http://leita.lt/re/comparison/transformation.html
