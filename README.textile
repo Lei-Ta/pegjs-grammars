@@ -2,6 +2,6 @@ h1. pegjs-grammars
 
 Here are grammar files for "PEG.js":http://pegjs.org/ parser generator
 
-* "reJSON":/rejson.textile
-* "ReML":/reml.textile
-* "Here you can to compare different languages":http://reml.lieta.lt/palyginimas/palyginimas.html
+* "JSSL":/jssl.textile
+* "ReSL":/resl.textile
+* "Here you can to compare different languages":http://re.leita.lt/comparison/
