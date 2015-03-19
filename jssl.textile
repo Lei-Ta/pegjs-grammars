@@ -1,0 +1,101 @@
+"Home":../../
+
+h1. JSSL
+
+"Grammar file":https://github.com/Re-Ling/pegjs-grammars/blob/master/grammars/JSSL.pegjs of JS Serialization Language for PEG parser generator
+
+The grammar adds QML-like features to JSON objects: 
+
+* Keyless values
+* Named objects
+* Repetitions
+
+JSSL can be used as replacement to XML and HTML, because it allows objects with same name and preserves order, and its syntax is simpler then JSON's one.
+
+Below there is code in JSSL and parser's output in JSON: 
+
+Input (JSSL):
+
+<pre><code>"doctype" { "html" }
+html {
+  head {
+    title { 'This is title' }
+    meta {
+      charset : 'utf-8'
+    }
+  } 
+  "body" {
+    h1 {
+      id    : "new"
+      class : "class1"
+      id    : "newest"
+      class : [ "other"; "another" ]
+      'This is \\sdfsdf
+header' }
+    p {'This is 
+text' }
+    ul { ;\+abc+\ br ;\\abc
+      li {"a"} [
+        [ 'One';'Two' ]            
+        15,15
+        15 
+        { 
+          "n"; "m" 
+           n : 'Four'; m : 'Five'
+        }
+      ]
+    }
+  }
+}</code></pre>
+
+Note: Names can be strings (with quotes) or symbols (without quotes).
+
+Ouput (JSON):
+
+bc. [
+  { "_name_": "doctype", "_content_": "html" },
+  { "_name_": "html", "_content_": [
+    { "_name_": "head", "_content_": [
+      { "_name_": "title", "_content_": "This is title" },
+      { "_name_": "meta", "_content_": 
+        { "_field_": "charset", "_action_": "=", "_content_": "utf-8" }
+      }
+    ] },
+    { "_name_": "body", "_content_": [
+      { "_name_": "h1", "_content_": [
+        { "_field_": "id", "_action_": "=", "_content_": "new" },
+        { "_field_": "class", "_action_": "=", "_content_": "class1" },
+        { "_field_": "id", "_action_": "=", "_content_": "newest" },
+        { "_field_": "class", "_action_": "=", "_content_": [
+          "other",
+          "another"
+        ] },
+        "This is header"
+      ] },
+      { "_name_": "p", "_content_": [
+          "This is ",  "text"
+      ] },
+      { "_name_": "ul", "_content_": [
+        { "_mlc_": "abc" },
+        { "_name_": "br" },
+        { "_slc_": "abc" },
+        { "_name_": "li", "_content_": "a", "_loop_": [
+          [
+            "One",
+            "Two"
+          ],
+          15.15,
+          15,
+          [
+            "n",
+            "m",
+            { "_field_": "n",
+              "_action_": "=",
+              "_content_": "Four"
+            }
+          ]
+        ] }
+      ] }
+    ] }
+  ] }
+]
