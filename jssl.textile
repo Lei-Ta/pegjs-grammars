@@ -10,7 +10,7 @@ The grammar adds QML-like features to JSON objects:
 * Named objects
 * Duplicated objects 
 
-Addiyionally, JSSL has repetitions.
+Additionally, JSSL has repetitions.
 
 JSSL can be used as replacement to XML and HTML, because it allows objects with same name and preserves order, and its syntax is simpler then JSON's one.
 
