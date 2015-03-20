@@ -8,7 +8,7 @@ ReSL can be used as replacement to XML and HTML, because it allows objects with 
 
 There is code in ReML and parser's output in JSON: 
 
-Input (ReML):
+Input (ReSL):
 
 <pre><code>doctype('html')
 html (
